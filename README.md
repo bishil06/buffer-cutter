@@ -26,7 +26,7 @@ cuttingBuffer(buffer, { deepCopy: true, length: 2 });
 ## cuttingRStream
 Cut the buffer output of Readable Stream  
 ```js
-import { cuttingBuffer } from 'buffer-cutter';
+import { cuttingRStream } from 'buffer-cutter';
 
 const buffer = Buffer.from('abcdefghi');
 // <Buffer 61 62 63 64 65 66 67 68 69>
