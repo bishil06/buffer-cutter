@@ -1,3 +1,7 @@
-import { cutBuffer, cuttingBuffer } from './lib/bufferCutter.js';
+import {
+  cutBuffer,
+  cuttingBuffer,
+  cuttingRStream,
+} from './lib/bufferCutter.js';
 
-export { cutBuffer, cuttingBuffer };
+export { cutBuffer, cuttingBuffer, cuttingRStream };
