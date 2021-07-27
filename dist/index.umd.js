@@ -1,0 +1,2 @@
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports):"function"==typeof define&&define.amd?define(["exports"],t):t((e||self).bufferCutter={})}(this,function(e){function t(e,t){var n=t.deepCopy,f=t.start,o=t.end,r=e.length<o?e.length-f:o-f;if(void 0===n||n){var u=Buffer.alloc(r);return e.copy(u,0,f,f+r),u}return e.subarray(f,f+r)}e.cutBuffer=t,e.cuttingBuffer=function(e,n){for(var f=[],o=n.length,r=n.deepCopy,u=void 0===r||r,i=0;i<e.length;)f.push(t(e,{deepCopy:u,start:i,end:i+=o}));return f}});
+//# sourceMappingURL=index.umd.js.map

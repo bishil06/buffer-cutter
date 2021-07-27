@@ -17,6 +17,6 @@
         "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow"}],
         "import/extensions": ["error", { "js": "always", "json": "never" }],
         "no-console": "off"
-    }
-    // "ignorePatterns": ["/"]
+    },
+    "ignorePatterns": ["dist/"]
 }
