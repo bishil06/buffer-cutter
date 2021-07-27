@@ -1,6 +1,6 @@
 {
   "name": "buffer-cutter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Cut buffer to length or something",
   "source": "index.js",
   "type": "module",
