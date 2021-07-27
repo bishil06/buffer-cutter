@@ -1,0 +1,36 @@
+{
+  "name": "buffer-cutter",
+  "version": "0.0.1",
+  "description": "Cut buffer to length or something",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint .",
+    "lint-fix": "npx eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bishil06/buffer-cutter.git"
+  },
+  "keywords": [
+    "buffer",
+    "cutter",
+    "split",
+    "iterator"
+  ],
+  "author": "bishil06",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bishil06/buffer-cutter/issues"
+  },
+  "homepage": "https://github.com/bishil06/buffer-cutter#readme",
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2"
+  }
+}
