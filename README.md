@@ -18,5 +18,5 @@ import { cuttingBuffer } from 'buffer-cutter';
 const buffer = Buffer.from('abcde');
 // <Buffer 61 62 63 64 65>
 cuttingBuffer(buffer, { deepCopy: true, length: 2 });
-// [ <Buffer 61>, <Buffer 62>, <Buffer 63>, <Buffer 64>, <Buffer 65> ]
+// [ <Buffer 61 62>, <Buffer 63 64>, <Buffer 65> ]
 ```
