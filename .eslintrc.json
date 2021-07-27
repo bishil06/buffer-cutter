@@ -18,5 +18,5 @@
         "import/extensions": ["error", { "js": "always", "json": "never" }],
         "no-console": "off"
     },
-    "ignorePatterns": ["dist/"]
+    "ignorePatterns": ["dist/", "example/"]
 }
