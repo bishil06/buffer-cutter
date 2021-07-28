@@ -1,2 +1,300 @@
-!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports):"function"==typeof define&&define.amd?define(["exports"],t):t((e||self).bufferCutter={})}(this,function(e){function t(e){var t;if("undefined"!=typeof Symbol&&(Symbol.asyncIterator&&(t=e[Symbol.asyncIterator]),null==t&&Symbol.iterator&&(t=e[Symbol.iterator])),null==t&&(t=e["@@asyncIterator"]),null==t&&(t=e["@@iterator"]),null==t)throw new TypeError("Object is not async iterable");return t.call(e)}function n(e){this.wrapped=e}function r(e){var t,r;function o(t,r){try{var i=e[t](r),a=i.value,c=a instanceof n;Promise.resolve(c?a.wrapped:a).then(function(e){c?o("return"===t?"return":"next",e):u(i.done?"return":"normal",e)},function(e){o("throw",e)})}catch(e){u("throw",e)}}function u(e,n){switch(e){case"return":t.resolve({value:n,done:!0});break;case"throw":t.reject(n);break;default:t.resolve({value:n,done:!1})}(t=t.next)?o(t.key,t.arg):r=null}this._invoke=function(e,n){return new Promise(function(u,i){var a={key:e,arg:n,resolve:u,reject:i,next:null};r?r=r.next=a:(t=r=a,o(e,n))})},"function"!=typeof e.return&&(this.return=void 0)}function o(e){return function(){return new r(e.apply(this,arguments))}}function u(e){return new n(e)}function i(e,t){var n={},r=!1;function o(n,o){return r=!0,o=new Promise(function(t){t(e[n](o))}),{done:!1,value:t(o)}}return n["undefined"!=typeof Symbol&&Symbol.iterator||"@@iterator"]=function(){return this},n.next=function(e){return r?(r=!1,e):o("next",e)},"function"==typeof e.throw&&(n.throw=function(e){if(r)throw r=!1,e;return o("throw",e)}),"function"==typeof e.return&&(n.return=function(e){return r?(r=!1,e):o("return",e)}),n}function a(e,t){var n=t.deepCopy,r=t.start,o=t.end,u=e.length<o?e.length-r:o-r;if(void 0===n||n){var i=Buffer.alloc(u);return e.copy(i,0,r,r+u),i}return e.subarray(r,r+u)}function c(e,t){for(var n=[],r=t.length,o=t.deepCopy,u=void 0===o||o,i=0;i<e.length;)n.push(a(e,{deepCopy:u,start:i,end:i+=r}));return n}function f(){return(f=o(regeneratorRuntime.mark(function e(n,r){var o,a,f,l,s,p,h,y,d,v,b,x,g,w,m,k;return regeneratorRuntime.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:o=r.length,f=void 0===(a=r.deepCopy)||a,l=[],s=0,p=!0,h=!1,e.prev=5,d=t(n);case 7:return e.next=9,u(d.next());case 9:return p=(v=e.sent).done,e.next=13,u(v.value);case 13:if(b=e.sent,p){e.next=33;break}if(l.push(x=b),!((s+=x.length)>o)){e.next=30;break}g=c(Buffer.concat(l),{deepCopy:f,length:o}),m=(w=g.length%o!=0)?g.length-1:g.length,k=0;case 23:if(!(k<m)){e.next=29;break}return e.next=26,g[k];case 26:k+=1,e.next=23;break;case 29:w?s=(l=[g[g.length-1]]).reduce(function(e,t){return e+t.length},0):(l=[],s=0);case 30:p=!0,e.next=7;break;case 33:e.next=39;break;case 35:e.prev=35,e.t0=e.catch(5),h=!0,y=e.t0;case 39:if(e.prev=39,e.prev=40,p||null==d.return){e.next=44;break}return e.next=44,u(d.return());case 44:if(e.prev=44,!h){e.next=47;break}throw y;case 47:return e.finish(44);case 48:return e.finish(39);case 49:if(!(l.length>0)){e.next=51;break}return e.delegateYield(i(t(l),u),"t1",51);case 51:case"end":return e.stop()}},e,null,[[5,35,39,49],[40,,44,48]])}))).apply(this,arguments)}r.prototype["function"==typeof Symbol&&Symbol.asyncIterator||"@@asyncIterator"]=function(){return this},r.prototype.next=function(e){return this._invoke("next",e)},r.prototype.throw=function(e){return this._invoke("throw",e)},r.prototype.return=function(e){return this._invoke("return",e)},e.cutBuffer=a,e.cuttingBuffer=c,e.cuttingRStream=function(e,t){return f.apply(this,arguments)}});
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('stream')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'stream'], factory) :
+  (global = global || self, factory(global.bufferCutter = {}, global.stream));
+}(this, (function (exports, stream) {
+  function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+  var stream__default = /*#__PURE__*/_interopDefaultLegacy(stream);
+
+  function _asyncIterator(iterable) {
+    var method;
+
+    if (typeof Symbol !== "undefined") {
+      if (Symbol.asyncIterator) method = iterable[Symbol.asyncIterator];
+      if (method == null && Symbol.iterator) method = iterable[Symbol.iterator];
+    }
+
+    if (method == null) method = iterable["@@asyncIterator"];
+    if (method == null) method = iterable["@@iterator"];
+    if (method == null) throw new TypeError("Object is not async iterable");
+    return method.call(iterable);
+  }
+
+  function _AwaitValue(value) {
+    this.wrapped = value;
+  }
+
+  function _AsyncGenerator(gen) {
+    var front, back;
+
+    function send(key, arg) {
+      return new Promise(function (resolve, reject) {
+        var request = {
+          key: key,
+          arg: arg,
+          resolve: resolve,
+          reject: reject,
+          next: null
+        };
+
+        if (back) {
+          back = back.next = request;
+        } else {
+          front = back = request;
+          resume(key, arg);
+        }
+      });
+    }
+
+    function resume(key, arg) {
+      try {
+        var result = gen[key](arg);
+        var value = result.value;
+        var wrappedAwait = value instanceof _AwaitValue;
+        Promise.resolve(wrappedAwait ? value.wrapped : value).then(function (arg) {
+          if (wrappedAwait) {
+            resume(key === "return" ? "return" : "next", arg);
+            return;
+          }
+
+          settle(result.done ? "return" : "normal", arg);
+        }, function (err) {
+          resume("throw", err);
+        });
+      } catch (err) {
+        settle("throw", err);
+      }
+    }
+
+    function settle(type, value) {
+      switch (type) {
+        case "return":
+          front.resolve({
+            value: value,
+            done: true
+          });
+          break;
+
+        case "throw":
+          front.reject(value);
+          break;
+
+        default:
+          front.resolve({
+            value: value,
+            done: false
+          });
+          break;
+      }
+
+      front = front.next;
+
+      if (front) {
+        resume(front.key, front.arg);
+      } else {
+        back = null;
+      }
+    }
+
+    this._invoke = send;
+
+    if (typeof gen.return !== "function") {
+      this.return = undefined;
+    }
+  }
+
+  _AsyncGenerator.prototype[typeof Symbol === "function" && Symbol.asyncIterator || "@@asyncIterator"] = function () {
+    return this;
+  };
+
+  _AsyncGenerator.prototype.next = function (arg) {
+    return this._invoke("next", arg);
+  };
+
+  _AsyncGenerator.prototype.throw = function (arg) {
+    return this._invoke("throw", arg);
+  };
+
+  _AsyncGenerator.prototype.return = function (arg) {
+    return this._invoke("return", arg);
+  };
+
+  function _wrapAsyncGenerator(fn) {
+    return function () {
+      return new _AsyncGenerator(fn.apply(this, arguments));
+    };
+  }
+
+  function _awaitAsyncGenerator(value) {
+    return new _AwaitValue(value);
+  }
+
+  function _asyncGeneratorDelegate(inner, awaitWrap) {
+    var iter = {},
+        waiting = false;
+
+    function pump(key, value) {
+      waiting = true;
+      value = new Promise(function (resolve) {
+        resolve(inner[key](value));
+      });
+      return {
+        done: false,
+        value: awaitWrap(value)
+      };
+    }
+
+    iter[typeof Symbol !== "undefined" && Symbol.iterator || "@@iterator"] = function () {
+      return this;
+    };
+
+    iter.next = function (value) {
+      if (waiting) {
+        waiting = false;
+        return value;
+      }
+
+      return pump("next", value);
+    };
+
+    if (typeof inner.throw === "function") {
+      iter.throw = function (value) {
+        if (waiting) {
+          waiting = false;
+          throw value;
+        }
+
+        return pump("throw", value);
+      };
+    }
+
+    if (typeof inner.return === "function") {
+      iter.return = function (value) {
+        if (waiting) {
+          waiting = false;
+          return value;
+        }
+
+        return pump("return", value);
+      };
+    }
+
+    return iter;
+  }
+
+  function cutBuffer(buf, opts = {}) {
+    if (!(buf instanceof Buffer)) {
+      throw new Error(`${buf} is not Buffer`);
+    }
+
+    const deepCopy = 'deepCopy' in opts ? opts.deepCopy : true;
+    const start = 'start' in opts ? opts.start : 0;
+    const end = 'end' in opts ? opts.end : buf.length;
+    const length = buf.length < end ? buf.length - start : end - start;
+
+    if (deepCopy) {
+      const result = Buffer.alloc(length);
+      buf.copy(result, 0, start, start + length);
+      return result;
+    }
+
+    return buf.subarray(start, start + length);
+  }
+  function cuttingBuffer(buffer, opts = {}) {
+    if (!(buffer instanceof Buffer)) {
+      throw new Error(`${buffer} is not Buffer`);
+    }
+
+    const result = [];
+    const deepCopy = 'deepCopy' in opts ? opts.deepCopy : true;
+    const length = 'length' in opts ? opts.length : buffer.length;
+
+    for (let i = 0; i < buffer.length;) {
+      result.push(cutBuffer(buffer, {
+        deepCopy,
+        start: i,
+        end: i += length
+      }));
+    }
+
+    return result;
+  }
+  function cuttingRStream(_x) {
+    return _cuttingRStream.apply(this, arguments);
+  }
+
+  function _cuttingRStream() {
+    _cuttingRStream = _wrapAsyncGenerator(function* (readable, opts = {}) {
+      if (!(readable instanceof stream__default['default'].Readable)) {
+        throw new Error(`${readable} is not Readable Stream`);
+      }
+
+      const deepCopy = 'deepCopy' in opts ? opts.deepCopy : true;
+      const length = 'length' in opts ? opts.length : null;
+
+      if (length === null) {
+        throw new Error('no unit to cut');
+      }
+
+      let tmpBuffers = [];
+      let tmpTotalSize = 0; // eslint-disable-next-line no-restricted-syntax
+
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+
+      var _iteratorError;
+
+      try {
+        for (var _iterator = _asyncIterator(readable), _step, _value; _step = yield _awaitAsyncGenerator(_iterator.next()), _iteratorNormalCompletion = _step.done, _value = yield _awaitAsyncGenerator(_step.value), !_iteratorNormalCompletion; _iteratorNormalCompletion = true) {
+          const chunk = _value;
+          tmpBuffers.push(chunk);
+          tmpTotalSize += chunk.length;
+
+          if (tmpTotalSize > length) {
+            const buffers = cuttingBuffer(Buffer.concat(tmpBuffers), {
+              deepCopy,
+              length
+            });
+            const isRest = buffers.length % length !== 0;
+            const loopTimes = isRest ? buffers.length - 1 : buffers.length;
+
+            for (let i = 0; i < loopTimes; i += 1) {
+              yield buffers[i];
+            }
+
+            if (isRest) {
+              tmpBuffers = [buffers[buffers.length - 1]];
+              tmpTotalSize = tmpBuffers.reduce((sum, buf) => sum + buf.length, 0);
+            } else {
+              tmpBuffers = [];
+              tmpTotalSize = 0;
+            }
+          }
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return != null) {
+            yield _awaitAsyncGenerator(_iterator.return());
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+
+      if (tmpBuffers.length > 0) yield* _asyncGeneratorDelegate(_asyncIterator(tmpBuffers), _awaitAsyncGenerator);
+    });
+    return _cuttingRStream.apply(this, arguments);
+  }
+
+  exports.cutBuffer = cutBuffer;
+  exports.cuttingBuffer = cuttingBuffer;
+  exports.cuttingRStream = cuttingRStream;
+
+})));
 //# sourceMappingURL=index.umd.js.map

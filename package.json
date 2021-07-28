@@ -1,6 +1,6 @@
 {
   "name": "buffer-cutter",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Cut buffer to length or something",
   "source": "index.js",
   "type": "module",
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx eslint .",
     "lint-fix": "npx eslint . --fix",
-    "build": "npx microbundle"
+    "build": "npx microbundle --target node"
   },
   "repository": {
     "type": "git",
