@@ -1,4 +1,4 @@
-import { cuttingBuffer } from '../index.js';
+import { cuttingBuffer } from '../build/index.js';
 
 const buffer = Buffer.from('abcde');
 // <Buffer 61 62 63 64 65>
