@@ -5,18 +5,20 @@
     },
     "extends": [
         "airbnb-base",
-        "eslint:recommended",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended", // eslint 충돌 규칙 비활성화
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 12,
         "sourceType": "module"
     },
-    "plugins": ["prettier"],
+    "plugins": [
+        "@typescript-eslint",
+        "prettier" // prettier 규칙 적용
+    ],
     "rules": {
-        "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow"}],
-        "import/extensions": ["error", { "js": "always", "json": "never" }],
-        "no-console": "off"
-    },
-    "ignorePatterns": ["dist/", "example/"]
+        "prettier/prettier": "error" // prettier 규칙 에러표시 활성화
+    }
 }

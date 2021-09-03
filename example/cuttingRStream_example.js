@@ -1,6 +1,6 @@
 import { Readable } from 'stream';
 
-import { cuttingRStream } from '../index.js';
+import { cuttingRStream } from '../build/index.js';
 
 const buffer = Buffer.from('abcdefghi');
 // <Buffer 61 62 63 64 65 66 67 68 69>
