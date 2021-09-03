@@ -27,7 +27,6 @@ export function cuttingBuffer(buf, opt = { deepCopy: true }) {
         return result;
     }
     return [buf];
-    throw new Error(`opt = ${opt} no opt`);
 }
 export async function* cuttingAsyncIterBuffer(asyncIterBuf, opt = { deepCopy: true }) {
     let tmpBuffers = [];
