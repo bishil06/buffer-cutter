@@ -1,9 +1,25 @@
-interface cutBufferOption {
+interface optionalDeepCopy {
   deepCopy?: boolean;
+}
+
+interface optionalStart {
   start?: number;
+}
+
+interface optionalEnd {
   end?: number;
 }
 
+interface cutBufferOption
+  extends optionalDeepCopy,
+    optionalStart,
+    optionalEnd {}
+
+export function cutBuffer(buf: Buffer): Buffer;
+export function cutBuffer(buf: Buffer, opt: optionalDeepCopy): Buffer;
+export function cutBuffer(buf: Buffer, opt: optionalStart): Buffer;
+export function cutBuffer(buf: Buffer, opt: optionalEnd): Buffer;
+export function cutBuffer(buf: Buffer, opt: cutBufferOption): Buffer;
 export function cutBuffer(
   buf: Buffer,
   opt: cutBufferOption = { deepCopy: true }
@@ -24,11 +40,14 @@ export function cutBuffer(
   return buf.subarray(start, start + length);
 }
 
-interface cuttingBufferOption {
-  deepCopy?: boolean;
+interface optionalLength {
   length?: number;
 }
 
+interface cuttingBufferOption extends optionalDeepCopy, optionalLength {}
+
+export function cuttingBuffer(buf: Buffer): Buffer[];
+export function cuttingBuffer(buf: Buffer, opt: cuttingBufferOption): Buffer[];
 export function cuttingBuffer(
   buf: Buffer,
   opt: cuttingBufferOption = { deepCopy: true }

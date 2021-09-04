@@ -1,15 +1,27 @@
 /// <reference types="node" />
-interface cutBufferOption {
+interface optionalDeepCopy {
     deepCopy?: boolean;
+}
+interface optionalStart {
     start?: number;
+}
+interface optionalEnd {
     end?: number;
 }
-export declare function cutBuffer(buf: Buffer, opt?: cutBufferOption): Buffer;
-interface cuttingBufferOption {
-    deepCopy?: boolean;
+interface cutBufferOption extends optionalDeepCopy, optionalStart, optionalEnd {
+}
+export declare function cutBuffer(buf: Buffer): Buffer;
+export declare function cutBuffer(buf: Buffer, opt: optionalDeepCopy): Buffer;
+export declare function cutBuffer(buf: Buffer, opt: optionalStart): Buffer;
+export declare function cutBuffer(buf: Buffer, opt: optionalEnd): Buffer;
+export declare function cutBuffer(buf: Buffer, opt: cutBufferOption): Buffer;
+interface optionalLength {
     length?: number;
 }
-export declare function cuttingBuffer(buf: Buffer, opt?: cuttingBufferOption): Buffer[];
+interface cuttingBufferOption extends optionalDeepCopy, optionalLength {
+}
+export declare function cuttingBuffer(buf: Buffer): Buffer[];
+export declare function cuttingBuffer(buf: Buffer, opt: cuttingBufferOption): Buffer[];
 interface cuttingAsyncIterBufferOption extends cuttingBufferOption {
     timeOut?: number;
 }
