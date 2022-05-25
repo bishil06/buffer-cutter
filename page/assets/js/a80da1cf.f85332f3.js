@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbuffer_cutter_pages=self.webpackChunkbuffer_cutter_pages||[]).push([[3205],{4863:function(s){s.exports=JSON.parse('{"label":"docusaurus","permalink":"/blog/tags/docusaurus","allTagsPath":"/blog/tags","count":4}')}}]);
