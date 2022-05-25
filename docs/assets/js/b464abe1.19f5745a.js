@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbuffer_cutter_pages=self.webpackChunkbuffer_cutter_pages||[]).push([[5646],{3007:function(e){e.exports=JSON.parse('{"label":"hello","permalink":"/buffer-cutter/blog/tags/hello","allTagsPath":"/buffer-cutter/blog/tags","count":2}')}}]);

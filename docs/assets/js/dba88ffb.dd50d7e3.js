@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbuffer_cutter_pages=self.webpackChunkbuffer_cutter_pages||[]).push([[4924],{5217:function(e){e.exports=JSON.parse('{"label":"facebook","permalink":"/buffer-cutter/blog/tags/facebook","allTagsPath":"/buffer-cutter/blog/tags","count":1}')}}]);
